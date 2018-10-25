@@ -41,7 +41,7 @@ function parseExpireDate(expires = '1 minute') {
 const cookieJar = {
   setItem(key, value = true, { expires, domain = window.location.hostname, path = '/' } = {}) {
     const expireDate = parseExpireDate(expires)
-    const parsedValue = typeof value !== String
+    const parsedValue = typeof value !== 'string'
       ? JSON.stringify(value)
       : value
     const cookie = `${key}=${parsedValue};expires=${expireDate};domain=${domain};path=${path}`

@@ -48,3 +48,10 @@ test('whateverStorage:key', (t) => {
 
   t.is(key, 'testString', 'number returns key on that position')
 })
+
+test('whateverStorage:cookie:setItem', (t) => {
+  db.cookie.setItem('testc', 'cookie test', {domain: 'x'})
+  const value = db.cookie.getItem('testc')
+
+  t.is(value, 'cookie test')
+})
