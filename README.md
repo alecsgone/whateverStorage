@@ -23,7 +23,8 @@ db.cookie.setItem('tmp_key', { foo: 'bar' }, {
 })
 // Other possible 'expires' values are
 // strings of 'number time_unit'
-// e.g. 2 days, 1 minute,
+// e.g. 2 days
+// e.g. 1 minute
 //
 // Valid time units are:
 // minute, minutes, hour, hours, day, days,
