@@ -53,5 +53,9 @@ test('whateverStorage:cookie:setItem', (t) => {
   db.cookie.setItem('testc', 'cookie test', {domain: 'x'})
   const value = db.cookie.getItem('testc')
 
+  db.cookie.setItem('obj', {foo: 'bar'}, {domain: 'x'})
+  const obj = db.cookie.getItem('obj')
+
   t.is(value, 'cookie test')
+  t.deepEqual(obj, {foo: 'bar'})
 })

@@ -57,7 +57,11 @@ const cookieJar = {
       return { ...acc, [cookieName.trim()]: value }
     }, {})
 
-    return cookiesObj[key]
+    try {
+      return JSON.parse(cookiesObj[key])
+    } catch (e) {
+      return cookiesObj[key]
+    }
   },
 
   removeItem(key) {
