@@ -21,10 +21,13 @@ db.cookie.setItem('tmp_key', { foo: 'bar' }, {
   domain: 'xxx', // default is window.location.hostname
   path: '/', // default is '/'
 })
-// other possible expire values are strings of a number a time unit
+// Other possible 'expires' values are
+// strings of 'number time_unit'
 // e.g. 2 days, 1 minute,
-// valid time units are:
-// minute, minutes, hour, hours, day, days, week, weeks, month, months, year, years
+//
+// Valid time units are:
+// minute, minutes, hour, hours, day, days,
+// week, weeks, month, months, year, years
 
 db.cookie.getItem('tmp_key') // { foo: 'bar' }
 db.cookie.removeItem('tmp_key')
