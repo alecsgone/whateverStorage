@@ -5,6 +5,7 @@
   "main": "lib/whateverStorage.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "prepublish": "npm run build && npm run test",
     "test": "ava"
   },
   "keywords": [],
