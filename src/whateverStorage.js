@@ -3,10 +3,6 @@ import StorageFallback from './StorageFallback'
 import cookieJar from './cookieJar'
 
 function whateverStorage(storage) {
-  if (storage === 'cookies') {
-    return cookieJar
-  }
-
   let storageMethod
 
   try {
@@ -46,5 +42,5 @@ function whateverStorage(storage) {
 export default {
   local: whateverStorage('localStorage'),
   session: whateverStorage('sessionStorage'),
-  cookie: whateverStorage('cookies'),
+  cookie: cookieJar,
 }

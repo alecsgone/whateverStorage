@@ -6,9 +6,7 @@ import parseExpireDate from './parseExpireDate'
 const cookieJar = {
   setItem(key, value = true, { expires, domain = window.location.hostname, path = '/' } = {}) {
     const expireDate = parseExpireDate(expires)
-    const parsedValue = typeof value !== 'string'
-      ? JSON.stringify(value)
-      : value
+    const parsedValue = JSON.stringify(value)
     const cookie = `${key}=${parsedValue};expires=${expireDate};domain=${domain};path=${path}`
 
     document.cookie = cookie
@@ -22,11 +20,7 @@ const cookieJar = {
       return { ...acc, [cookieName.trim()]: value }
     }, {})
 
-    try {
-      return JSON.parse(cookiesObj[key])
-    } catch (e) {
-      return cookiesObj[key]
-    }
+    return JSON.parse(cookiesObj[key])
   },
 
   removeItem(key) {
